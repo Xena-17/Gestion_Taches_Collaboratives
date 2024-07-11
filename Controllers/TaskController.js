@@ -14,7 +14,7 @@ class TaskController{
 }
 async getTaskById(req, res){
     try {
-        const task = await UserTask.getAllTask();
+        const task = await Taskservice.getAllTask();
         res.json(task);
     } catch (error) {
         res.status(500);
