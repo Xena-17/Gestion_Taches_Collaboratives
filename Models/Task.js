@@ -28,7 +28,7 @@ Task.init({
     US_ID: {
         type: DataTypes.INTEGER,
             references: {
-            model: 'Users',
+            model: 'User',
             key: 'US_ID'
         },
         allowNull: false
@@ -40,8 +40,8 @@ Task.init({
     
 })
 
-User.hasmany(Task, {as : 'tasks', foreignKey: 'US_ID'});
-Task.belongsTo(User, {as : 'User', foreignkey : 'US_ID'});
+User.hasMany(Task, {as : 'tasks', foreignKey: 'US_ID'});
+Task.belongsTo(User, {as : 'User', foreignKey : 'US_ID'});
 
 module.exports = Task;
 

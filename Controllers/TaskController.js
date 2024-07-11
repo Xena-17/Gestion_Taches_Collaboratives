@@ -7,6 +7,7 @@ class TaskController{
             const tasks = await TaskService.getAllTask();
             res.json(tasks);
         } catch (error) {
+            console.log(error);
             res.status(500);
             res.json({message: "une erreur est survenue lors de la récupération des tâches en cours"})
         } 
@@ -34,7 +35,7 @@ async addTask(req, res){
 async updateTask(req, res){
     try {
         const updateTask = await TaskService.updateTask(req.params.id, req.body);
-        Res.json(updatedTask);
+        res.json(updatedTask);
     } catch (error) {
         res.status(500);
         res.json({message: "une erreur est survenue lors de la mise à jour de la tâche"})
@@ -43,7 +44,7 @@ async updateTask(req, res){
 
 async deleteTask(req, res){
     try {
-        await TaskService.deleteTask(req.params.id);
+        const task = await TaskService.deleteTask(req.params.id);
         res.status(204).send();
     } catch (error) {
         res.status(500);

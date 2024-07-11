@@ -1,6 +1,6 @@
 const express = require('express');
 const userRoutes = require('./Routes/UserRoutes');
-
+const taskRoutes= require('./Routes/TaskRoutes');
 
 
 const app = express();
@@ -15,6 +15,7 @@ app.get('/hello', (request, result) => {
 })
 
 app.use('/users', userRoutes);
+app.use('/tasks', taskRoutes);
 
 
 
