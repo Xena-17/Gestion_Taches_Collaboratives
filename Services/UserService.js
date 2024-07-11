@@ -17,7 +17,7 @@ async addUser(user) {
 async updateUser(userId, updatedUser) {
     return await User.update(userId, {
         where: { 
-            CA_ID : id
+            US_ID : id
         }
     })
           
@@ -26,10 +26,10 @@ async updateUser(userId, updatedUser) {
 async deleteUser(userId) {
     return await User.destroy({
         where: {
-            CA_ID: userId
+            US_ID: id
         }
     });
 }
 }
 
-module.exports = new UserService;
+module.exports = new UserService();
