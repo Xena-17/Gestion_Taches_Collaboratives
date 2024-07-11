@@ -5,9 +5,9 @@ class CommentController{
     async getAllComment(req, res){
         try {
             const Comment = await CommentService.getAllComment();
-            res.json(tasks);
+            res.json(Comment);
         } catch (error) {
-            // console.log(error);
+            //console.log(error);
             res.status(500);
             res.json({message: "une erreur est survenue lors de la récupération du commentaire"})
         } 
@@ -15,7 +15,7 @@ class CommentController{
 async getCommentById(req, res){
     try {
         const Comment = await CommentService.getAllComment();
-        res.json(task);
+        res.json(Comment);
     } catch (error) {
         res.status(500);
         res.json({message: "une erreur est survenue lors de la récupération du commentaire"})

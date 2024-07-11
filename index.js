@@ -1,7 +1,7 @@
 const express = require('express');
 const userRoutes = require('./Routes/UserRoutes');
 const taskRoutes= require('./Routes/TaskRoutes');
-
+const commentRoutes= require('./Routes/CommentRoutes');
 
 const app = express();
 const port = 3001;
@@ -16,6 +16,7 @@ app.get('/hello', (request, result) => {
 
 app.use('/users', userRoutes);
 app.use('/tasks', taskRoutes);
+app.use('/comments', commentRoutes);
 
 
 
