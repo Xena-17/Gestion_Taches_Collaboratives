@@ -5,29 +5,29 @@ class UserController{
     async getAllUser(req, res){
         try {
             const users = await UserService.getAllUser();
-            Result.json(users);
+            res.json(users);
         } catch (error) {
-            result.status(500);
-            result.json({message: "une erreur est survenue lors de la récupération des utilisateurs"})
+            res.status(500);
+            res.json({message: "une erreur est survenue lors de la récupération des utilisateurs"})
         } 
 }
 async getUserById(req, res){
     try {
         const user = await UserService.getAllUser();
-        Result.json(user);
+        res.json(user);
     } catch (error) {
-        result.status(500);
-        result.json({message: "une erreur est survenue lors de la récupération de l'identifiant des utilisateurs"})
+        res.status(500);
+        res.json({message: "une erreur est survenue lors de la récupération de l'identifiant des utilisateurs"})
     }
 }
 
 async addUser(req, res){
     try {
         const newUser = await UserService.addUser(req.body);
-        Result.status(201).json(newUser);
+        res.status(201).json(newUser);
     } catch (error) {
-        result.status(500);
-        result.json({message: "une erreur est survenue lors de l'ajout d'un utilisateur"})
+        res.status(500);
+        res.json({message: "une erreur est survenue lors de l'ajout d'un utilisateur"})
     }
 }
 

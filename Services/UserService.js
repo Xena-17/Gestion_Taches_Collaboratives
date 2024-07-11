@@ -2,7 +2,7 @@ const User = require('../Models/User');
 
 class UserService {
     async getAllUser() {
-        return await User/User.findAll();
+        return await User.findAll();
 
 }
 
