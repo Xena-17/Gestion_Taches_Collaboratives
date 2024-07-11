@@ -34,20 +34,20 @@ async addUser(req, res){
 async updateUser(req, res){
     try {
         const updatedUser = await UserService.updateUser(req.params.id, req.body);
-        Result.json(updatedUser);
+        res.json(updatedUser);
     } catch (error) {
-        result.status(500);
-        result.json({message: "une erreur est survenue lors de la mise à jour de l'utilisateur"})
+        res.status(500);
+        res.json({message: "une erreur est survenue lors de la mise à jour de l'utilisateur"})
     }
 }
 
 async deleteUser(req, res){
     try {
         await UserService.deleteUser(req.params.id);
-        Result.status(204).send();
+        Res.status(204).send();
     } catch (error) {
-        result.status(500);
-        result.json({message: "une erreur est survenue lors de la suppression de l'utilisateur"})
+        res.status(500);
+        res.json({message: "une erreur est survenue lors de la suppression de l'utilisateur"})
     }
 
 }
