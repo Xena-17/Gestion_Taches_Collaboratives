@@ -1,8 +1,8 @@
 const express = require('express');
-const UserRoutes = require('./Routes/UserRoutes');
-const TaskRoutes= require('./Routes/TaskRoutes');
-const CommentRoutes= require('./Routes/CommentRoutes');
-const CollaborationRoutes = require('./Routes/CollaborationRoutes');
+const userRoutes = require('./Routes/UserRoutes');
+const taskRoutes= require('./Routes/TaskRoutes');
+const commentRoutes= require('./Routes/CommentRoutes');
+const collaborationRoutes = require('./Routes/CollaborationRoutes');
 
 const app = express();
 const port = 3001;
@@ -15,10 +15,10 @@ app.get('/hello', (request, result) => {
     result.send('Hello World !!');
 })
 
-app.use('/users', UserRoutes);
-app.use('/tasks', TaskRoutes);
-app.use('/comments', CommentRoutes);
-app.use('/collaborations', CollaborationRoutes);
+app.use('/users', userRoutes);
+app.use('/tasks', taskRoutes);
+app.use('/comments', commentRoutes);
+app.use('/collaborations', collaborationRoutes);
 
 
 

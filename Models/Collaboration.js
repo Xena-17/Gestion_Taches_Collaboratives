@@ -10,24 +10,20 @@ Collaboration.init({
     US_ID: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true,
-        foreignKey: true,
-        references: {
+            references: {
             model: 'User',
             key: 'US_ID'
             },
         allowNull: false
         },
-        
+
     TA_ID: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true,
-        foreignKey: true,
         references: {
-            model: 'Task',
-            key: 'TA_ID'
-            },
+        model: 'Task',
+        key: 'TA_ID'
+        },
         allowNull: false
         }
 
@@ -40,7 +36,7 @@ Collaboration.init({
     
 })
 
-Task.hasMany(Collaboration, {as : 'tasks', foreignKey: 'TA_ID'});
+Task.hasMany(Collaboration, {as : 'Collaborations', foreignKey: 'TA_ID'});
 Collaboration.belongsTo(User, {as : 'User', foreignKey : 'US_ID'});
 
 module.exports = Collaboration;
