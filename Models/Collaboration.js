@@ -17,7 +17,8 @@ Collaboration.init({
             key: 'US_ID'
             },
         allowNull: false
-        }
+        },
+        
     TA_ID: {
         type: DataTypes.INTEGER,
         primaryKey: true,
